@@ -1,6 +1,6 @@
 <template>
   <div
-    class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+    class="relative px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
   >
     <div class="relative flex items-center justify-between">
       <a
@@ -29,55 +29,98 @@
           >Company</span
         >
       </a>
-      <ul class="flex items-center hidden space-x-8 lg:flex">
-        <li>
-          <a
-            href="/"
-            aria-label="Our product"
-            title="Our product"
-            class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >Product</a
-          >
-        </li>
-        <li>
-          <a
-            href="/"
-            aria-label="Our product"
-            title="Our product"
-            class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >Features</a
-          >
-        </li>
-        <li>
-          <a
-            href="/"
-            aria-label="Product pricing"
-            title="Product pricing"
-            class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >Pricing</a
-          >
-        </li>
-        <li>
-          <a
-            href="/"
-            aria-label="About us"
-            title="About us"
-            class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >About us</a
-          >
-        </li>
-        <li>
-          <a
-            href="/"
-            class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-            aria-label="Sign up"
-            title="Sign up"
-          >
-            Sign up
-          </a>
-        </li>
-      </ul>
+      <div class="flex">
+        <ul class="items-center hidden space-x-8 lg:flex">
+          <li>
+            <a
+              href="/"
+              aria-label="Our product"
+              title="Our product"
+              class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >Product</a
+            >
+          </li>
+          <li>
+            <a
+              href="/"
+              aria-label="Our product"
+              title="Our product"
+              class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a
+              href="/"
+              aria-label="Product pricing"
+              title="Product pricing"
+              class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a
+              href="/"
+              aria-label="About us"
+              title="About us"
+              class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >About us</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center">
+          <span>
+            <a
+              @click.prevent="handleCart"
+              class="block p-6 border-b-4 border-transparent hover:hover:border-deep-purple-accent-700"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                />
+              </svg>
+
+              <span class="sr-only">Cart</span>
+            </a>
+          </span>
+          <span>
+            <a
+              href="/account"
+              class="block p-6 border-b-4 border-transparent hover:border-deep-purple-accent-700"
+            >
+              <svg
+                class="w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+
+              <span class="sr-only"> Account </span>
+            </a>
+          </span>
+        </div>
+      </div>
+
       <div class="lg:hidden">
+      
         <button
           aria-label="Open Menu"
           title="Open Menu"
@@ -200,15 +243,23 @@
         </div>
       </div>
     </div>
+
+    <shopping-cart :isOpen="isCartOpen" @closeCart="handleCart" />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import ShoppingCart from "@/components/ShoppingCart.vue";
+
 const isMenuOpen = ref(false);
+const isCartOpen = ref(true);
+
+const handleCart = () => {
+  isCartOpen.value = !isCartOpen.value;
+};
 
 const handleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
-  console.log(isMenuOpen.value);
 };
 </script>

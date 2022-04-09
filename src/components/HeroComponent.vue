@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="relative px-4 sm:px-0">
+    <div class="-z-50 relative px-4 sm:px-0">
       <div
         class="relative grid mx-auto overflow-hidden bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md"
       >
