@@ -38,7 +38,7 @@
             </svg>
           </button>
         </div>
-        <div class="relative h-64 overflow-auto">
+        <div class="relative max-h-64 overflow-auto">
           <div class="flex items-start pb-6">
             <img
               class="object-cover w-16 h-16 rounded-lg"

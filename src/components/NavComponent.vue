@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+    class="bg-white md:sticky top-0 z-50 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8"
   >
     <div class="relative flex items-center justify-between">
       <a
@@ -32,39 +32,31 @@
       <div class="flex">
         <ul class="items-center hidden space-x-8 lg:flex">
           <li>
-            <a
-              href="/"
+            <router-link
+              :to="{ name: 'Home' }"
               aria-label="Our product"
               title="Our product"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >Product</a
+              >Home</router-link
             >
           </li>
           <li>
-            <a
-              href="/"
+            <router-link
+              :to="{ name: 'Shop' }"
               aria-label="Our product"
               title="Our product"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >Features</a
+              >Shop</router-link
             >
           </li>
+
           <li>
-            <a
-              href="/"
-              aria-label="Product pricing"
-              title="Product pricing"
-              class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >Pricing</a
-            >
-          </li>
-          <li>
-            <a
-              href="/"
+            <router-link
+              :to="{ name: 'About' }"
               aria-label="About us"
               title="About us"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >About us</a
+              >About us</router-link
             >
           </li>
         </ul>
@@ -120,7 +112,6 @@
       </div>
 
       <div class="lg:hidden">
-      
         <button
           aria-label="Open Menu"
           title="Open Menu"
@@ -192,39 +183,31 @@
             <nav>
               <ul class="space-y-4">
                 <li>
-                  <a
-                    href="/"
+                  <router-link
+                    :to="{ name: 'Home' }"
                     aria-label="Our product"
                     title="Our product"
                     class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >Product</a
+                    >Home</router-link
                   >
                 </li>
                 <li>
-                  <a
-                    href="/"
+                  <router-link
+                    :to="{ name: 'Shop' }"
                     aria-label="Our product"
                     title="Our product"
                     class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >Features</a
+                    >Shop</router-link
                   >
                 </li>
+
                 <li>
-                  <a
-                    href="/"
-                    aria-label="Product pricing"
-                    title="Product pricing"
-                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >Pricing</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/"
+                  <router-link
+                    :to="{ name: 'About' }"
                     aria-label="About us"
                     title="About us"
                     class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >About us</a
+                    >About us</router-link
                   >
                 </li>
                 <li>
@@ -253,7 +236,7 @@ import { ref } from "vue";
 import ShoppingCart from "@/components/ShoppingCart.vue";
 
 const isMenuOpen = ref(false);
-const isCartOpen = ref(true);
+const isCartOpen = ref(false);
 
 const handleCart = () => {
   isCartOpen.value = !isCartOpen.value;

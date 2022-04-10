@@ -363,7 +363,7 @@
     </div>
   </section>
 </template>
-<script>
+<script setup>
 const initSwiper = () => {
   new Swiper(".swiper", {
     loop: true,
@@ -390,7 +390,7 @@ script.src = "https://unpkg.com/swiper/swiper-bundle.min.js";
 script.addEventListener("load", initSwiper);
 document.body.appendChild(script);
 </script>
-<style>
+<style scoped>
 @import "https://unpkg.com/swiper/swiper-bundle.min.css";
 .swiper-pagination {
   bottom: 0;
