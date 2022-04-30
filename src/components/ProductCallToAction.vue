@@ -7,102 +7,49 @@
   plugins: [require('@tailwindcss/aspect-ratio')]
 -->
 <template>
-    <section>
-  <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
-      <div class="flex items-center p-8 bg-gray-100 rounded">
-        <div class="mx-auto text-center lg:text-left">
-          <h2 class="text-teal-accent-400 text-2xl font-bold">
-            Watches
-          </h2>
+  <section class="relative bg-white mt-10 mb-10">
+    <img
+      class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
+      src="https://images.unsplash.com/photo-1601758003122-53c40e686a19"
+      alt="Couple on a bed with a dog"
+    />
 
-          <p class="mt-4 text-sm text-gray-700 max-w-[45ch]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, cupiditate mollitia saepe vitae libero nobis.
-          </p>
+    <div
+      class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-white sm:to-transparent"
+    ></div>
+
+    <div
+      class="relative max-w-screen-xl px-4 py-20 mx-auto lg:items-center lg:flex"
+    >
+      <div class="max-w-xl text-center sm:text-left">
+        <h1 class="text-3xl font-extrabold sm:text-5xl">
+          Act before
+          <strong class="font-extrabold text-rose-700 sm:block">
+            it's too late.
+          </strong>
+        </h1>
+
+        <p class="max-w-lg mt-4 sm:leading-relaxed sm:text-xl">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
+          illo tenetur fuga ducimus numquam ea!
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-8 text-center">
+          <a
+            class="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-rose-600 sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring"
+            href="/get-started"
+          >
+            Get Started
+          </a>
 
           <a
-            href="/collections/watches"
-            class="inline-block px-6 py-3 mt-6 text-sm text-black bg-yellow-400 rounded"
+            class="block w-full px-12 py-3 text-sm font-medium bg-white rounded shadow text-rose-600 sm:w-auto hover:text-rose-700 active:text-rose-500 focus:outline-none focus:ring"
+            href="/about"
           >
-            View the Range
+            Learn More
           </a>
         </div>
       </div>
-
-      <div class="grid grid-cols-2 gap-4 lg:col-span-2 lg:grid-cols-3 lg:py-12">
-        <a
-          href="/product/simple-watch"
-          class="block"
-        >
-          <div class="aspect-w-1 aspect-h-1">
-            <img
-              loading="lazy"
-              alt="Simple Watch"
-              class="object-cover rounded"
-              src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
-            />
-          </div>
-
-          <div class="mt-2">
-            <h5 class="font-medium">
-              Simple Watch
-            </h5>
-
-            <p class="mt-1 text-sm text-gray-700">
-              $150
-            </p>
-          </div>
-        </a>
-
-        <a
-          href="/product/simple-watch"
-          class="block"
-        >
-          <div class="aspect-w-1 aspect-h-1">
-            <img
-              loading="lazy"
-              alt="Simple Watch"
-              class="object-cover rounded"
-              src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
-            />
-          </div>
-
-          <div class="mt-2">
-            <h5 class="font-medium">
-              Simple Watch
-            </h5>
-
-            <p class="mt-1 text-sm text-gray-700">
-              $150
-            </p>
-          </div>
-        </a>
-
-        <a
-          href="/product/simple-watch"
-          class="block"
-        >
-          <div class="aspect-w-1 aspect-h-1">
-            <img
-              loading="lazy"
-              alt="Simple Watch"
-              class="object-cover rounded"
-              src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
-            />
-          </div>
-
-          <div class="mt-2">
-            <h5 class="font-medium">
-              Simple Watch
-            </h5>
-
-            <p class="mt-1 text-sm text-gray-700">
-              $150
-            </p>
-          </div>
-        </a>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 </template>
